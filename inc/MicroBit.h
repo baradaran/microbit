@@ -64,6 +64,7 @@ DEALINGS IN THE SOFTWARE.
 #include "MicroBitBLEManager.h"
 #include "MicroBitRadio.h"
 #include "MicroBitStorage.h"
+#include "CalliopeSoundMotor.h"
 
 // MicroBit::flags values
 #define MICROBIT_INITIALIZED                    0x01
@@ -123,6 +124,12 @@ class MicroBit
 	MicroBitBLEManager		    bleManager;
     MicroBitRadio               radio;
     BLEDevice                   *ble;
+
+    // added sound
+
+    CalliopeSoundMotor   soundMotor;
+
+
 
     /**
       * Constructor.
