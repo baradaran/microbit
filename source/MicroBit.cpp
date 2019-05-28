@@ -80,6 +80,7 @@ MicroBit::MicroBit() :
        MICROBIT_ID_IO_P15,MICROBIT_ID_IO_P16,MICROBIT_ID_IO_P19,
        MICROBIT_ID_IO_P20),
     bleManager(storage),
+    soundMotor(),
     radio(),
     ble(NULL)
 {
