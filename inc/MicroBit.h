@@ -119,12 +119,12 @@ class MicroBit
 
     //An object of available IO pins on the device
     MicroBitIO                  io;
-
+    CalliopeSoundMotor	soundMotor;
     // Bluetooth related member variables.
 	MicroBitBLEManager		    bleManager;
     MicroBitRadio               radio;
     BLEDevice                   *ble;
-	CalliopeSoundMotor	soundMotor;
+
 
     /**
       * Constructor.
