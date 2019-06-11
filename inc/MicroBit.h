@@ -65,6 +65,7 @@ DEALINGS IN THE SOFTWARE.
 #include "MicroBitRadio.h"
 #include "MicroBitStorage.h"
 #include "CalliopeSoundMotor.h"
+#include "CalliopeRGB.h"
 
 // MicroBit::flags values
 #define MICROBIT_INITIALIZED                    0x01
@@ -119,12 +120,15 @@ class MicroBit
 
     //An object of available IO pins on the device
     MicroBitIO                  io;
-    CalliopeSoundMotor	soundMotor;
+    
     // Bluetooth related member variables.
 	MicroBitBLEManager		    bleManager;
     MicroBitRadio               radio;
     BLEDevice                   *ble;
-
+    
+    // CALLIOPE ADDED
+    CalliopeSoundMotor	soundMotor;
+    CalliopeRGB 				rgb;
 
     /**
       * Constructor.
