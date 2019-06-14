@@ -68,8 +68,8 @@ MicroBit::MicroBit() :
     buttonA(MICROBIT_PIN_BUTTON_A, MICROBIT_ID_BUTTON_A),
     buttonB(MICROBIT_PIN_BUTTON_B, MICROBIT_ID_BUTTON_B),
     buttonAB(MICROBIT_ID_BUTTON_A,MICROBIT_ID_BUTTON_B, MICROBIT_ID_BUTTON_AB),
-    accelerometer(MicroBitAccelerometer::autoDetect(i2c)),
-    compass(MicroBitCompass::autoDetect(i2c)),
+    accelerometer(i2c),
+    compass(i2c,accelerometer,storage),
     compassCalibrator(compass, accelerometer, display, storage),
     thermometer(storage),
     io(MICROBIT_ID_IO_P0,MICROBIT_ID_IO_P1,MICROBIT_ID_IO_P2,
@@ -81,9 +81,10 @@ MicroBit::MicroBit() :
        MICROBIT_ID_IO_P20,MICROBIT_ID_IO_P21),
     bleManager(storage),
 // addded sound motor
-soundMotor(),
     radio(),
-    ble(NULL)
+    ble(NULL),
+    rgb(),
+    soundMotor(),
 {
     // Clear our status
     status = 0;
@@ -217,7 +218,7 @@ void MicroBit::onListenerRegisteredEvent(MicroBitEvent evt)
         case MICROBIT_ID_COMPASS:
             // A listener has been registered for the compass.
             // The compass uses lazy instantiation, we just need to read the data once to start it running.
-            compass.getSample();
+            compass.heading();
 
             break;
 
@@ -225,7 +226,7 @@ void MicroBit::onListenerRegisteredEvent(MicroBitEvent evt)
         case MICROBIT_ID_GESTURE:
             // A listener has been registered for the accelerometer.
             // The accelerometer uses lazy instantiation, we just need to read the data once to start it running.
-            accelerometer.getSample();
+            accelerometer.updateSample();
             break;
 
         case MICROBIT_ID_THERMOMETER:
