@@ -84,7 +84,7 @@ MicroBit::MicroBit() :
     radio(),
     ble(NULL),
     rgb(),
-    soundMotor(),
+    soundMotor()
 {
     // Clear our status
     status = 0;
