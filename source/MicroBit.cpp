@@ -82,9 +82,9 @@ MicroBit::MicroBit() :
     bleManager(storage),
 // addded sound motor
     radio(),
-    ble(NULL),
     rgb(),
-    soundMotor()
+    soundMotor(),
+    ble(NULL)
 {
     // Clear our status
     status = 0;
