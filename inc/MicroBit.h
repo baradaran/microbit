@@ -127,8 +127,9 @@ class MicroBit
     BLEDevice                   *ble;
     
     // CALLIOPE ADDED
-    CalliopeSoundMotor	soundMotor;
     CalliopeRGB 				rgb;
+    CalliopeSoundMotor	soundMotor;
+   
 
     /**
       * Constructor.
