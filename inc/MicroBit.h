@@ -115,7 +115,6 @@ class MicroBit
     MicroBitMultiButton         buttonAB;
     MicroBitAccelerometer      accelerometer;
     MicroBitCompass             compass;
-    MicroBitCompassCalibrator   compassCalibrator;
     MicroBitThermometer         thermometer;
 
     //An object of available IO pins on the device
