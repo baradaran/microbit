@@ -114,6 +114,7 @@ class MicroBit
     MicroBitButton              buttonB;
     MicroBitMultiButton         buttonAB;
     MicroBitAccelerometer      accelerometer;
+    MicroBitCompassCalibrator   compassCalibrator;
     MicroBitCompass             compass;
     MicroBitThermometer         thermometer;
 
