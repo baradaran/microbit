@@ -70,6 +70,7 @@ MicroBit::MicroBit() :
     buttonAB(MICROBIT_ID_BUTTON_A,MICROBIT_ID_BUTTON_B, MICROBIT_ID_BUTTON_AB),
     accelerometer(i2c),
     compass(i2c,accelerometer,storage),
+    compassCalibrator(compass, accelerometer, display, storage),
     thermometer(storage),
     io(MICROBIT_ID_IO_P0,MICROBIT_ID_IO_P1,MICROBIT_ID_IO_P2,
        MICROBIT_ID_IO_P3,MICROBIT_ID_IO_P4,MICROBIT_ID_IO_P5,
